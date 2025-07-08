@@ -1,2 +1,6 @@
-@import "./el-ui.scss";
-@import "./custom.scss";
+@use "./el-ui.scss";
+@use "./custom.scss";
+
+body {
+  background-color: var(--el-bg-color-page);
+}

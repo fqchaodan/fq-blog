@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@element-plus/icons-vue':
+        specifier: ^2.3.1
+        version: 2.3.1(vue@3.5.17(typescript@5.8.3))
       '@pureadmin/utils':
         specifier: ^2.6.2
         version: 2.6.2(vue@3.5.17(typescript@5.8.3))
@@ -17,6 +20,9 @@ importers:
       '@vitejs/plugin-vue-jsx':
         specifier: ^5.0.1
         version: 5.0.1(vite@7.0.2(@types/node@24.0.10)(jiti@2.4.2)(sass@1.89.2))(vue@3.5.17(typescript@5.8.3))
+      '@vueuse/core':
+        specifier: ^13.5.0
+        version: 13.5.0(vue@3.5.17(typescript@5.8.3))
       element-plus:
         specifier: ^2.10.3
         version: 2.10.3(vue@3.5.17(typescript@5.8.3))
@@ -68,6 +74,9 @@ importers:
       stylelint-config-standard:
         specifier: ^38.0.0
         version: 38.0.0(stylelint@16.21.1(typescript@5.8.3))
+      unplugin-icons:
+        specifier: ^22.1.0
+        version: 22.1.0(@vue/compiler-sfc@3.5.17)
       vue:
         specifier: ^3.5.17
         version: 3.5.17(typescript@5.8.3)
@@ -89,7 +98,7 @@ importers:
         version: 66.3.3(postcss@8.5.6)(vite@7.0.2(@types/node@24.0.10)(jiti@2.4.2)(sass@1.89.2))(vue@3.5.17(typescript@5.8.3))
       unplugin-auto-import:
         specifier: ^19.3.0
-        version: 19.3.0(@vueuse/core@9.13.0(vue@3.5.17(typescript@5.8.3)))
+        version: 19.3.0(@vueuse/core@13.5.0(vue@3.5.17(typescript@5.8.3)))
       unplugin-vue-components:
         specifier: ^28.8.0
         version: 28.8.0(@babel/parser@7.28.0)(vue@3.5.17(typescript@5.8.3))
@@ -773,6 +782,9 @@ packages:
   '@types/web-bluetooth@0.0.16':
     resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
 
+  '@types/web-bluetooth@0.0.21':
+    resolution: {integrity: sha512-oIQLCGWtcFZy2JW77j9k8nHzAOpqMHLQejDA48XXMWH6tjCQHz5RCFz1bzsmROyL6PUm+LLnUiI4BCn221inxA==}
+
   '@unocss/astro@66.3.3':
     resolution: {integrity: sha512-q26EfadSMmEXZpWDKsJF9anBCfhYDmWljVpDZ2Wo8K48IbZMUXrWfiAiUc6ijE/A/rADfHk8bp3a3GE01t3I9A==}
     peerDependencies:
@@ -961,11 +973,24 @@ packages:
       vue:
         optional: true
 
+  '@vueuse/core@13.5.0':
+    resolution: {integrity: sha512-wV7z0eUpifKmvmN78UBZX8T7lMW53Nrk6JP5+6hbzrB9+cJ3jr//hUlhl9TZO/03bUkMK6gGkQpqOPWoabr72g==}
+    peerDependencies:
+      vue: ^3.5.0
+
   '@vueuse/core@9.13.0':
     resolution: {integrity: sha512-pujnclbeHWxxPRqXWmdkKV5OX4Wk4YeK7wusHqRwU0Q7EFusHoqNA/aPhB6KCh9hEqJkLAJo7bb0Lh9b+OIVzw==}
 
+  '@vueuse/metadata@13.5.0':
+    resolution: {integrity: sha512-euhItU3b0SqXxSy8u1XHxUCdQ8M++bsRs+TYhOLDU/OykS7KvJnyIFfep0XM5WjIFry9uAPlVSjmVHiqeshmkw==}
+
   '@vueuse/metadata@9.13.0':
     resolution: {integrity: sha512-gdU7TKNAUVlXXLbaF+ZCfte8BjRJQWPCa2J55+7/h+yDtzw3vOoGQDRXzI6pyKyo6bXFT5/QoPE4hAknExjRLQ==}
+
+  '@vueuse/shared@13.5.0':
+    resolution: {integrity: sha512-K7GrQIxJ/ANtucxIXbQlUHdB0TPA8c+q5i+zbrjxuhJCnJ9GtBg75sBSnvmLSxHKPg2Yo8w62PWksl9kwH0Q8g==}
+    peerDependencies:
+      vue: ^3.5.0
 
   '@vueuse/shared@9.13.0':
     resolution: {integrity: sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==}
@@ -2103,6 +2128,29 @@ packages:
       '@vueuse/core':
         optional: true
 
+  unplugin-icons@22.1.0:
+    resolution: {integrity: sha512-ect2ZNtk1Zgwb0NVHd0C1IDW/MV+Jk/xaq4t8o6rYdVS3+L660ZdD5kTSQZvsgdwCvquRw+/wYn75hsweRjoIA==}
+    peerDependencies:
+      '@svgr/core': '>=7.0.0'
+      '@svgx/core': ^1.0.1
+      '@vue/compiler-sfc': ^3.0.2 || ^2.7.0
+      svelte: ^3.0.0 || ^4.0.0 || ^5.0.0
+      vue-template-compiler: ^2.6.12
+      vue-template-es2015-compiler: ^1.9.0
+    peerDependenciesMeta:
+      '@svgr/core':
+        optional: true
+      '@svgx/core':
+        optional: true
+      '@vue/compiler-sfc':
+        optional: true
+      svelte:
+        optional: true
+      vue-template-compiler:
+        optional: true
+      vue-template-es2015-compiler:
+        optional: true
+
   unplugin-utils@0.2.4:
     resolution: {integrity: sha512-8U/MtpkPkkk3Atewj1+RcKIjb5WBimZ/WSLhhR3w6SsIj8XJuKTacSP8g+2JhfSGw0Cb125Y+2zA/IzJZDVbhA==}
     engines: {node: '>=18.12.0'}
@@ -2805,6 +2853,8 @@ snapshots:
 
   '@types/web-bluetooth@0.0.16': {}
 
+  '@types/web-bluetooth@0.0.21': {}
+
   '@unocss/astro@66.3.3(vite@7.0.2(@types/node@24.0.10)(jiti@2.4.2)(sass@1.89.2))(vue@3.5.17(typescript@5.8.3))':
     dependencies:
       '@unocss/core': 66.3.3
@@ -3112,6 +3162,13 @@ snapshots:
       typescript: 5.8.3
       vue: 3.5.17(typescript@5.8.3)
 
+  '@vueuse/core@13.5.0(vue@3.5.17(typescript@5.8.3))':
+    dependencies:
+      '@types/web-bluetooth': 0.0.21
+      '@vueuse/metadata': 13.5.0
+      '@vueuse/shared': 13.5.0(vue@3.5.17(typescript@5.8.3))
+      vue: 3.5.17(typescript@5.8.3)
+
   '@vueuse/core@9.13.0(vue@3.5.17(typescript@5.8.3))':
     dependencies:
       '@types/web-bluetooth': 0.0.16
@@ -3122,7 +3179,13 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
+  '@vueuse/metadata@13.5.0': {}
+
   '@vueuse/metadata@9.13.0': {}
+
+  '@vueuse/shared@13.5.0(vue@3.5.17(typescript@5.8.3))':
+    dependencies:
+      vue: 3.5.17(typescript@5.8.3)
 
   '@vueuse/shared@9.13.0(vue@3.5.17(typescript@5.8.3))':
     dependencies:
@@ -4255,7 +4318,7 @@ snapshots:
       - supports-color
       - vue
 
-  unplugin-auto-import@19.3.0(@vueuse/core@9.13.0(vue@3.5.17(typescript@5.8.3))):
+  unplugin-auto-import@19.3.0(@vueuse/core@13.5.0(vue@3.5.17(typescript@5.8.3))):
     dependencies:
       local-pkg: 1.1.1
       magic-string: 0.30.17
@@ -4264,7 +4327,19 @@ snapshots:
       unplugin: 2.3.5
       unplugin-utils: 0.2.4
     optionalDependencies:
-      '@vueuse/core': 9.13.0(vue@3.5.17(typescript@5.8.3))
+      '@vueuse/core': 13.5.0(vue@3.5.17(typescript@5.8.3))
+
+  unplugin-icons@22.1.0(@vue/compiler-sfc@3.5.17):
+    dependencies:
+      '@antfu/install-pkg': 1.1.0
+      '@iconify/utils': 2.3.0
+      debug: 4.4.1
+      local-pkg: 1.1.1
+      unplugin: 2.3.5
+    optionalDependencies:
+      '@vue/compiler-sfc': 3.5.17
+    transitivePeerDependencies:
+      - supports-color
 
   unplugin-utils@0.2.4:
     dependencies:

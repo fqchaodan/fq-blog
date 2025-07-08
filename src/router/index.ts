@@ -1,17 +1,25 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
 
-const routes: any = [
-  { path: '/', redirect: '/overview' },
-  {
-    path: '/overview',
-    name: 'overview',
-    component: () => import('@/views/overview/index.vue')
-  }
-]
-
 const router = createRouter({
   history: createMemoryHistory(),
-  routes
+  routes: [
+    {
+      path: '/',
+      component: () => import('@/views/home/index.vue'),
+      children: [
+        {
+          path: '/overview',
+          name: 'overview',
+          component: () => import('@/views/overview/index.vue')
+        },
+        {
+          path: '/menu',
+          name: 'menu',
+          component: () => import('@/views/menu/index.vue')
+        }
+      ]
+    }
+  ]
 })
 
 export default router

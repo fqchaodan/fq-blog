@@ -30,6 +30,11 @@
     "skipLibCheck": true,
     "noEmit": true,
     "baseUrl": "./",
+    "resolveExtensions": [
+      ".ts",
+      ".js",
+      ".json"
+    ],
     "paths": {
       "@": [
         "src"
