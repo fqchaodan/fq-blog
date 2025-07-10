@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div>menu</div>
+  <div>diary</div>
 </template>
 
 <style scoped></style>

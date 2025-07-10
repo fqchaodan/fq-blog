@@ -1,5 +1,6 @@
 <script lang="ts" setup>
   import Header from '@/views/layout/header/index.vue'
+  import Menu from '@/views/layout/menu/index.vue'
 </script>
 
 <template>
@@ -7,7 +8,10 @@
     <!--头部-->
     <Header></Header>
 
-    <div class="h-[calc(100vh-64px)] overflow-auto">
+    <div class="h-[calc(100vh-64px)] flex gap-1 overflow-auto">
+      <!--菜单-->
+      <Menu></Menu>
+
       <router-view />
     </div>
   </div>

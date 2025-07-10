@@ -1,6 +1,7 @@
 <script lang="ts" setup>
   import { getOssUrl } from '@/utils/index.js'
   import { useDark, useToggle } from '@vueuse/core'
+  import router from '@/router/index.js'
 
   const isDark = useDark()
   const toggleDark = useToggle(isDark)
@@ -12,7 +13,7 @@
     class="h-64px w-full flex items-center justify-between p-x-4"
   >
     <!--左侧-->
-    <div class="flex items-center gap-1">
+    <div class="flex items-center gap-1 cursor-pointer select-none" @click="router.replace('/')">
       <img :height="40" alt="" src="@/assets/imgs/tomato.png" />
       <div class="text-xl font-600">番茄博客</div>
     </div>
