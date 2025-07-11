@@ -44,5 +44,8 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, './src')
     }
+  },
+  server: {
+    host: '0.0.0.0'
   }
 })

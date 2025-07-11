@@ -57,11 +57,15 @@
 </script>
 
 <template>
-  <div class="w-40 flex flex-col gap-4 p-2">
+  <div class="w-160px flex flex-col gap-4 p-2">
     <div
       v-for="item in menuList"
       :key="item.name"
-      :class="checkedName === item.name ? 'bg-#409EFF text-white' : ' text-gray-6'"
+      :class="
+        checkedName === item.name
+          ? 'bg-#409EFF text-white'
+          : 'hover:bg-white hover:text-black  text-gray-6'
+      "
       class="flex items-center gap-4 rounded-lg px-4 py-2 cursor-pointer font-500"
       @click="chooseMenu(item)"
     >

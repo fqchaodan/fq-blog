@@ -12,7 +12,11 @@
       <!--菜单-->
       <Menu></Menu>
 
-      <router-view />
+      <div class="w-[calc(100vw-160px)]">
+        <transition name="el-fade-in-linear">
+          <router-view />
+        </transition>
+      </div>
     </div>
   </div>
 </template>
