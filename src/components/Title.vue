@@ -1,13 +1,11 @@
 <script lang="ts" setup>
   type TitleProps = {
     title: string
-    icon: string
     showSearch?: boolean
   }
 
   const props = withDefaults(defineProps<TitleProps>(), {
     title: '标题',
-    icon: 'Grid',
     showSearch: true
   })
 
@@ -19,12 +17,7 @@
 <template>
   <div class="h-40px flex items-center justify-between">
     <!--标题-->
-    <div class="flex items-center gap-1">
-      <el-icon :size="32" color="#409EFF">
-        <component :is="props.icon" />
-      </el-icon>
-      <div class="text-2xl font-bold">{{ props.title }}</div>
-    </div>
+    <div class="text-2xl font-bold">{{ props.title }}</div>
 
     <!--搜索-->
     <el-input
