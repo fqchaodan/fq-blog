@@ -2,6 +2,7 @@
   import { ref } from 'vue'
   import Title from '@/components/Title.vue'
   import Card, { CardProps } from '@/views/overview/components/Card.vue'
+  import Visit from './components/Visit.vue'
   import { overviewData } from '@/mock/index.js'
 
   //  总览列表
@@ -32,7 +33,7 @@
       name: '随笔笔记',
       total: 0,
       bgColor: '#CFF0CB',
-      showPlus: true
+      showPlus: true 
     }
   ])
 
@@ -52,6 +53,7 @@
   <div class="flex flex-col gap-2 h-[calc(100%-24px)] m-y-2 m-r-2 overflow-auto">
     <Title title="总览"></Title>
 
+    <!-- 卡片 -->
     <div class="grid grid-cols-4 gap-6">
       <Card
         v-for="item in overviewList"
@@ -61,6 +63,19 @@
         :show-plus="item.showPlus"
         :total="item.total"
       ></Card>
+    </div>
+
+    <!-- 图表 -->
+    <div class="grid grid-cols-2 gap-6 mt-6">
+      <div class="flex flex-col gap-2">
+        <!-- 访问量 -->
+        <Visit/>
+
+        <!-- 数据检测 -->
+        <div></div>
+      </div>
+      <!-- 评论 -->
+      <div></div>
     </div>
   </div>
 </template>
