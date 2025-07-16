@@ -1,9 +1,12 @@
 <script lang="ts" setup>
   import { ref } from 'vue'
+  import { useDark } from '@vueuse/core'
   import Chart from '@/components/echarts/Chart.vue'
 
+  const isDark = useDark()
+
   // 分段器
-  const visitType = ref('近一周')
+  const dataType = ref('近一周')
 
   const options = ['近一周', '近一年']
 
@@ -27,7 +30,10 @@
     },
     legend: {
       top: '5%',
-      left: 'center'
+      left: 'center',
+      textStyle: {
+        color: isDark.value ? '#fff' : '#000'
+      }
     },
     series: [
       {
@@ -46,7 +52,8 @@
             return '设备数量' + '\n' + '\n' + '37台'
           },
           fontSize: 16,
-          position: 'center'
+          position: 'center',
+          color: isDark.value ? '#fff' : '#000'
         },
         labelLine: {
           show: false
@@ -91,7 +98,8 @@
             return '访问总数' + '\n' + '\n' + '37台'
           },
           fontSize: 16,
-          position: 'center'
+          position: 'center',
+          color: isDark.value ? '#fff' : '#000'
         },
         labelLine: {
           show: false
@@ -124,7 +132,10 @@
     },
     legend: {
       top: '5%',
-      left: 'center'
+      left: 'center',
+      textStyle: {
+        color: isDark.value ? '#fff' : '#000'
+      }
     },
     series: [
       {
@@ -143,7 +154,8 @@
             return '设备数量' + '\n' + '\n' + '370台'
           },
           fontSize: 16,
-          position: 'center'
+          position: 'center',
+          color: isDark.value ? '#fff' : '#000'
         },
         labelLine: {
           show: false
@@ -188,7 +200,8 @@
             return '设备数量' + '\n' + '\n' + '87台'
           },
           fontSize: 16,
-          position: 'center'
+          position: 'center',
+          color: isDark.value ? '#fff' : '#000'
         },
         labelLine: {
           show: false
@@ -213,14 +226,33 @@
 
   const chartOption1 = ref<any>(chartOptionWeek1.value)
   const chartOption2 = ref<any>(chartOptionWeek2.value)
+
+  watch(
+    () => isDark,
+    () => {
+      // 适配黑暗模式
+      chartOptionWeek1.value.legend.textStyle.color = isDark.value ? '#fff' : '#000'
+      chartOptionWeek1.value.series[0].label.color = isDark.value ? '#fff' : '#000'
+      chartOptionWeek2.value.series[0].label.color = isDark.value ? '#fff' : '#000'
+      chartOptionYear1.value.legend.textStyle.color = isDark.value ? '#fff' : '#000'
+      chartOptionYear1.value.series[0].label.color = isDark.value ? '#fff' : '#000'
+      chartOptionYear2.value.series[0].label.color = isDark.value ? '#fff' : '#000'
+
+      chartOption1.value =
+        dataType.value === '近一周' ? chartOptionWeek1.value : chartOptionYear1.value
+      chartOption2.value =
+        dataType.value === '近一周' ? chartOptionWeek2.value : chartOptionYear2.value
+    },
+    { deep: true }
+  )
 </script>
 
 <template>
-  <div class="bg-white rounded p-2">
+  <div :class="isDark ? 'bg-dark' : 'bg-white'" class="rounded p-2">
     <div class="flex items-center justify-between">
       <div class="text-xl font-bold">数据监测</div>
       <div class="custom-style">
-        <el-segmented v-model="visitType" :options="options" @change="typeChange" />
+        <el-segmented v-model="dataType" :options="options" @change="typeChange" />
       </div>
     </div>
 

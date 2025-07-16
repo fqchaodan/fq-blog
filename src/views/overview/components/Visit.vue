@@ -1,6 +1,9 @@
 <script lang="ts" setup>
   import { ref } from 'vue'
+  import { useDark } from '@vueuse/core'
   import Chart from '@/components/echarts/Chart.vue'
+
+  const isDark = useDark()
 
   // 分段器
   const visitType = ref('近一周')
@@ -67,7 +70,7 @@
 </script>
 
 <template>
-  <div class="bg-white rounded p-2">
+  <div :class="isDark ? 'bg-dark' : 'bg-white'" class="rounded p-2">
     <div class="flex items-center justify-between">
       <div class="text-xl font-bold">访问量</div>
       <div class="custom-style">
