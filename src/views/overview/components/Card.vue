@@ -1,11 +1,5 @@
 <script lang="ts" setup>
-  export type CardProps = {
-    path?: string
-    name: string
-    bgColor: string
-    total?: number | string
-    showPlus: boolean
-  }
+  import { CardProps } from '@/type.js'
 
   const props = withDefaults(defineProps<CardProps>(), {
     path: '',

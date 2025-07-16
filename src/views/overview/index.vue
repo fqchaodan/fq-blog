@@ -1,12 +1,13 @@
 <script lang="ts" setup>
   import { ref } from 'vue'
-  import { overviewData } from '@/mock/index.js'
+  import { overviewData } from '@/mock'
+  import { CardProps } from '@/type'
   import Title from '@/components/Title.vue'
-  import Card, { CardProps } from '@/views/overview/components/Card.vue'
+  import Card from '@/views/overview/components/Card.vue'
   import Visit from './components/Visit.vue'
   import DataWatch from '@/views/overview/components/DataWatch.vue'
   import Comment from '@/views/overview/components/Comment.vue'
-  
+
   //  总览列表
   const overviewList = ref<CardProps[]>([
     {
@@ -52,7 +53,9 @@
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 h-[calc(100%-24px)] m-y-2 m-r-2 overflow-auto">
+  <div
+    class="flex flex-col gap-2 h-[calc(100%-24px)] m-y-2 m-r-2 overflow-auto hover:cursor-pointer"
+  >
     <Title title="总览"></Title>
 
     <!-- 卡片 -->

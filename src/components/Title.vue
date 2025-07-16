@@ -1,8 +1,5 @@
 <script lang="ts" setup>
-  type TitleProps = {
-    title: string
-    showSearch?: boolean
-  }
+  import { TitleProps } from '@/type.js'
 
   const props = withDefaults(defineProps<TitleProps>(), {
     title: '标题',

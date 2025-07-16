@@ -1,7 +1,7 @@
 <script lang="ts" setup>
   import { ref } from 'vue'
   import { useDark } from '@vueuse/core'
-  import Chart from '@/components/echarts/Chart.vue'
+  import Chart from '@/components/Echarts/index.vue'
 
   const isDark = useDark()
 
