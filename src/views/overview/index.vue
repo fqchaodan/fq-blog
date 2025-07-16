@@ -1,10 +1,12 @@
 <script lang="ts" setup>
   import { ref } from 'vue'
+  import { overviewData } from '@/mock/index.js'
   import Title from '@/components/Title.vue'
   import Card, { CardProps } from '@/views/overview/components/Card.vue'
   import Visit from './components/Visit.vue'
-  import { overviewData } from '@/mock/index.js'
-
+  import DataWatch from '@/views/overview/components/DataWatch.vue'
+  import Comment from '@/views/overview/components/Comment.vue'
+  
   //  总览列表
   const overviewList = ref<CardProps[]>([
     {
@@ -33,7 +35,7 @@
       name: '随笔笔记',
       total: 0,
       bgColor: '#CFF0CB',
-      showPlus: true 
+      showPlus: true
     }
   ])
 
@@ -69,13 +71,13 @@
     <div class="grid grid-cols-2 gap-6 mt-6">
       <div class="flex flex-col gap-2">
         <!-- 访问量 -->
-        <Visit/>
+        <Visit />
 
-        <!-- 数据检测 -->
-        <div></div>
+        <!-- 数据监测 -->
+        <DataWatch />
       </div>
       <!-- 评论 -->
-      <div></div>
+      <Comment></Comment>
     </div>
   </div>
 </template>
