@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+  import { useDark } from '@vueuse/core'
   import { ReplyData } from '@/type'
 
   interface ReplyProps {
@@ -33,13 +34,16 @@
     showAvatar: true,
     showFooter: true
   })
+
+  const isDark = useDark()
 </script>
 
 <template>
   <div
     v-for="item in props.data"
     :key="item.id"
-    class="flex items-start gap-2 py-2 transition-all duration-500 ease-in-out hover:bg-gray-100 rounded hover:shadow-md hover:p-2 border-bottom"
+    :class="isDark ? 'hover:bg-dark-100' : 'hover:bg-gray-100'"
+    class="flex items-start gap-2 py-2 transition-all duration-500 ease-in-out rounded hover:shadow-md hover:p-2 border-bottom"
   >
     <el-avatar v-if="props.showAvatar" :size="40" :src="item.user.avatar" class="w-40px" />
     <div class="flex flex-col flex-1">
