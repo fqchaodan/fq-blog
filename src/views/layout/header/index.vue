@@ -1,10 +1,19 @@
 <script lang="ts" setup>
   import { getOssUrl } from '@/utils/index.js'
   import { useDark, useToggle } from '@vueuse/core'
+  import { ChatRound, Moon, Sunny } from '@element-plus/icons-vue'
   import router from '@/router/index.js'
+  import Information from '@/views/overview/components/Information.vue'
 
   const isDark = useDark()
   const toggleDark = useToggle(isDark)
+
+  // 私信
+  const drawerShow = ref(false)
+
+  const onClick = () => {
+    drawerShow.value = true
+  }
 </script>
 
 <template>
@@ -20,9 +29,11 @@
 
     <!--右侧-->
     <div class="flex items-center gap-4">
-      <el-icon color="gray" size="24">
-        <ChatRound />
-      </el-icon>
+      <el-badge class="item" is-dot @click="onClick">
+        <el-icon color="gray" size="24">
+          <ChatRound />
+        </el-icon>
+      </el-badge>
 
       <el-avatar :size="30" :src="getOssUrl('avatar.png')" />
 
@@ -37,6 +48,11 @@
 
       <el-button round type="primary">退出</el-button>
     </div>
+
+    <!--私信-->
+    <el-drawer v-model="drawerShow" body-class="!p-0" destroy-on-close title="私信">
+      <Information />
+    </el-drawer>
   </div>
 </template>
 

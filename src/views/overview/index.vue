@@ -8,7 +8,7 @@
   import DataWatch from '@/views/overview/components/DataWatch.vue'
   import Comment from '@/views/overview/components/Comment.vue'
 
-  //  总览列表
+  // 总览列表
   const overviewList = ref<CardProps[]>([
     {
       path: '',

@@ -29,13 +29,8 @@
 </script>
 
 <template>
-  <div :class="isDark ? 'bg-dark' : 'bg-white'" class="h-664px overflow-auto rounded p-2">
-    <div class="text-xl font-bold">
-      <span>评论 </span>
-      <span v-if="commentTotal">{{ commentTotal }}</span>
-    </div>
-
-    <Reply :data="data"></Reply>
+  <div :class="isDark ? 'bg-dark' : 'bg-white'" class="overflow-auto rounded p-2">
+    <Reply :data="data" :show-footer="false"></Reply>
 
     <el-pagination
       :current-page="currentPage"

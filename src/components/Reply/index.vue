@@ -3,7 +3,8 @@
 
   interface ReplyProps {
     data: ReplyData[]
-    showAvatar: boolean
+    showAvatar?: boolean
+    showFooter?: boolean
   }
 
   const props = withDefaults(defineProps<ReplyProps>(), {
@@ -29,12 +30,17 @@
         complaint: 0
       }
     ],
-    showAvatar: true
+    showAvatar: true,
+    showFooter: true
   })
 </script>
 
 <template>
-  <div v-for="item in props.data" :key="item.id" class="flex items-start gap-2 mt-4">
+  <div
+    v-for="item in props.data"
+    :key="item.id"
+    class="flex items-start gap-2 py-2 transition-all duration-500 ease-in-out hover:bg-gray-100 rounded hover:shadow-md hover:p-2 border-bottom"
+  >
     <el-avatar v-if="props.showAvatar" :size="40" :src="item.user.avatar" class="w-40px" />
     <div class="flex flex-col flex-1">
       <div class="font-bold">{{ item.user.name }}</div>
@@ -42,7 +48,7 @@
 
       <div class="my-2 text-#606266">{{ item.comment }}</div>
 
-      <div class="flex items-center gap-4">
+      <div v-if="props.showFooter" class="flex items-center gap-4">
         <el-tag>{{ item.article.name }}</el-tag>
         <div v-if="item.complaint" class="text-red text-xs">举报 {{ item.complaint }}</div>
       </div>
@@ -50,4 +56,8 @@
   </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+  .border-bottom {
+    border-bottom: 1px solid #e4e7ed;
+  }
+</style>
