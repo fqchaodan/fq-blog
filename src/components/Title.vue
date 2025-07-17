@@ -30,6 +30,8 @@
         <el-button icon="Search" @click="emits('search', searchVal)" />
       </template>
     </el-input>
+
+    <slot name="default"></slot>
   </div>
 </template>
 

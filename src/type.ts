@@ -35,3 +35,16 @@ export interface Comment {
   count: number
   list: ReplyData[]
 }
+
+// 分组
+export interface GroupItem {
+  id: number
+  name: string
+  value: number
+  state: number
+  moment: string
+}
+
+/*
+* 本地文件
+* */

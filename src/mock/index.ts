@@ -35,3 +35,19 @@ export const commentData = Mock.mock({
     ]
   }
 })
+
+/*分组*/
+export const groupData = Mock.mock({
+  code: 200,
+  data: {
+    'list|4-8': [
+      {
+        'id|+1': 1,
+        name: '@ctitle(2,6)',
+        'value|0-12': 4,
+        'state|0-1': 0, // 0：未发布，1：已发布
+        moment: '@datetime()'
+      }
+    ]
+  }
+})

@@ -8,7 +8,10 @@ import '@/styles/index.scss'
 import 'virtual:uno.css'
 
 // router
-import router from './router/index.js'
+import router from '@/router/index'
+
+// pinia
+import pinia from '@/store/index'
 
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
@@ -23,5 +26,6 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 app.use(ElementPlus)
 app.use(router)
+app.use(pinia)
 
 app.mount('#app')
